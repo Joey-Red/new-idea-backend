@@ -31,29 +31,6 @@ db.on("error", console.error.bind(console, "mongo connection error"));
 // Middleware for parsing JSON request bodies
 app.use(bodyParser.json());
 
-// app.post("/log-in", async (req, res, done) => {
-//   User.findOne({ username: req.body.username }, (err, user) => {
-//     if (err) {
-//       return done(err);
-//     }
-//     if (!user) {
-//       console.log("User Not Found, create the account!");
-//       const user = new User({
-//         username: req.body.username,
-//         firstName: req.body.firstName,
-//         lastName: req.body.lastName,
-//       }).save((err) => {
-//         if (err) {
-//           return done(err);
-//         }
-//       });
-//       console.log(req.body.username + " Created");
-//     }
-//     console.log(user);
-//     // session.user = user;
-//   });
-// });
-
 // Set up session middleware
 app.use(
   session({
